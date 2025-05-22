@@ -20,3 +20,23 @@ This project implements three challenges:
    ```bash
    npm install
 
+
+## 📋 Project Structure
+AeonAssessment/
+src/
+├── components/           # Reusable UI components
+│   ├── Calculator/      # Challenge 1 - Calculator component
+│   ├── Navbar/         # Challenge 2 - Navigation component
+│   └── TwoSum/         # Challenge 3 - Algorithm component
+├── context/            # Context API providers
+│   └── AppContext.tsx  # Global state management
+├── screens/            # Screen components
+│   ├── HomeScreen.tsx
+│   ├── CalculatorScreen.tsx
+│   ├── NavbarScreen.tsx
+│   └── TwoSumScreen.tsx
+├── types/              # TypeScript type definitions
+│   └── index.ts
+├── utils/              # Utility functions
+│   └── algorithms.ts   # Two Sum algorithm
+└── App.tsx            # Main application component
