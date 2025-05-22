@@ -127,6 +127,7 @@ const appReducer = (state: AppState, action: ActionType): AppState => {
         }
 
         for (let i = 1; i < numbers.length; i++) {
+          // Ensure the array is sorted in non-decreasing order as required by the twoSum algorithm
           if (numbers[i] < numbers[i - 1]) {
             throw new Error('Array must be sorted in non-decreasing order');
           }
