@@ -1,26 +1,21 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
+    /* Basic Options */
+    "target": "ESNext",
+    "module": "NodeNext",
+    "jsx": "react-native",
     "strict": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "strictBindCallApply": true,
-    "strictPropertyInitialization": true,
-    "noImplicitOverride": true,
-    "exactOptionalPropertyTypes": true,
-    "noUncheckedIndexedAccess": true,
+    "noEmit": true,
+    
+    /* Module Resolution */
+    "moduleResolution": "nodenext",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "skipLibCheck": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "moduleResolution": "nodenext",
-    "allowJs": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
+    
+    /* Path Mapping */
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
@@ -29,7 +24,16 @@
       "@/context/*": ["src/context/*"],
       "@/types/*": ["src/types/*"],
       "@/utils/*": ["src/utils/*"]
-    }
+    },
+    
+    /* Strict Type Checking */
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*",
