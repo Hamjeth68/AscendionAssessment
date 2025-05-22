@@ -1,20 +1,16 @@
-const { getDefaultConfig } = require('metro-config');
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 
-module.exports = (async () => {
-  const {
-    resolver: { sourceExts, assetExts },
-  } = await getDefaultConfig();
-  return {
-    resolver: {
-      alias: {
-        '@': './src',
-        '@/components': './src/components',
-        // Add other aliases here
+const defaultConfig = getDefaultConfig(__dirname);
+
+const config = {
+  transformer: {
+    getTransformOptions: async () => ({
+      transform: {
+        experimentalImportSupport: false,
+        inlineRequires: true,
       },
-      // Remove 'svg' from assetExts to handle SVG files as React components
-      assetExts: assetExts.filter(ext => ext !== 'svg'),
-      // Add 'svg' to sourceExts to enable importing SVG files as modules
-      sourceExts: [...sourceExts, 'svg'],
-    },
-  };
-})();
+    }),
+  },
+};
+
+module.exports = mergeConfig(defaultConfig, config);
